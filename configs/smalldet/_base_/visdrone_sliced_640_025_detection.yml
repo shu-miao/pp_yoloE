@@ -1,0 +1,20 @@
+metric: COCO
+num_classes: 10
+
+TrainDataset:
+  !COCODataSet
+    image_dir: /NV10-dataset/images
+    anno_path: D:\\PycharmProjects\PaddleDetection\\DeepLab_NWPU-VHR-10_Dataset_coco\\NWPUVHR-10_dataset_coco\\instances_train2017.json
+    dataset_dir: /NV10-dataset
+    data_fields: ['image', 'gt_bbox', 'gt_class', 'is_crowd']
+
+EvalDataset:
+  !COCODataSet
+    image_dir: /NV10-dataset/images
+    anno_path: D:\\PycharmProjects\\PaddleDetection\\DeepLab_NWPU-VHR-10_Dataset_coco\\NWPUVHR-10_dataset_coco\\instances_val2017.json
+    dataset_dir: /NV10-dataset
+
+TestDataset:
+  !ImageFolder
+    anno_path: D:\\PycharmProjects\\PaddleDetection\\DeepLab_NWPU-VHR-10_Dataset_coco\\NWPUVHR-10_dataset_coco\\instances_val2017.json
+    dataset_dir: /NV10-dataset/images
